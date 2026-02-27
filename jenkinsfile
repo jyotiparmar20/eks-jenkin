@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/yourusername/three-tier-project.git'
+                git ''https://github.com/jyotiparmar20/eks-jenkin.git
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh '''
                 aws eks --region us-east-1 update-kubeconfig --name three-tier-eks
-                kubectl apply -f k8s/all.yaml
+                kubectl apply -f main.yml
                 '''
             }
         }
