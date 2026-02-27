@@ -12,9 +12,8 @@ pipeline {
 
         stage('Terraform Init & Apply') {
             steps {
-                sh '''
-                cd terraform
-                terraform init
+                sh '''    
+                 terraform init
                 terraform apply -auto-approve
                 '''
             }
