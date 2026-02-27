@@ -10,6 +10,16 @@ pipeline {
             }
         }
 
+        stage('Terraform Init & Apply') {
+            steps {
+                sh '''
+                cd terraform
+                terraform init
+                terraform apply -auto-approve
+                '''
+            }
+        }
+
         stage('Deploy to EKS') {
             steps {
                 sh '''
