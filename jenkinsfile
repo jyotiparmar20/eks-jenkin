@@ -4,8 +4,9 @@ pipeline {
     stages {
 
         stage('Checkout') {
-            steps {
-                git 'https://github.com/jyotiparmar20/eks-jenkin.git'
+            steps { 
+                git branch: 'main',
+                   url: 'https://github.com/jyotiparmar20/eks-jenkin.git'
             }
         }
 
