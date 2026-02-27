@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git ''https://github.com/jyotiparmar20/eks-jenkin.git
+                git 'https://github.com/jyotiparmar20/eks-jenkin.git'
             }
         }
 
