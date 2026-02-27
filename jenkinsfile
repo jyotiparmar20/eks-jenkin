@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git 'https://github.com/yourusername/three-tier-project.git'
+            }
+        }
+
+        stage('Deploy to EKS') {
+            steps {
+                sh '''
+                aws eks --region us-east-1 update-kubeconfig --name three-tier-eks
+                kubectl apply -f k8s/all.yaml
+                '''
+            }
+        }
+    }
+}
