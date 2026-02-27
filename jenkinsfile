@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh '''
                 aws eks --region us-east-1 update-kubeconfig --name three-tier-eks
-                kubectl apply -f main.yml
+                kubectl apply -f main.yaml
                 '''
             }
         }
