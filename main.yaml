@@ -56,7 +56,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: yourdockerhub/backend:latest
+        image: jyotiparmar208/jugnoo:backend
         env:
         - name: DB_HOST
           value: mysql-service
@@ -97,7 +97,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: yourdockerhub/frontend:latest
+        image: jyotiparmar208/jugnoo:frontend
         ports:
         - containerPort: 80
 ---
