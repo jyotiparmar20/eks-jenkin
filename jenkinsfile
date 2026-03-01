@@ -18,14 +18,5 @@ pipeline {
                 '''
             }
         }
-
-        stage('Deploy to EKS') {
-            steps {
-                sh '''
-                aws eks --region us-east-1 update-kubeconfig --name three-tier-eks
-                kubectl apply -f main.yaml
-                '''
-            }
-        }
     }
 }
